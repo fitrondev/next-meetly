@@ -1,15 +1,16 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 import { SearchSchema } from "@/constants/formSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Search } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
-import { useRouter } from "next/navigation";
 
 const SearchField = () => {
   const router = useRouter();
@@ -42,7 +43,7 @@ const SearchField = () => {
           )}
         />
 
-        <Button size={"icon"} type="submit">
+        <Button size={"icon"} type="submit" className="hidden sm:flex">
           <Search />
         </Button>
       </form>
